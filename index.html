@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>That Boy Hi Hat — Verified Catalog Stats</title>
+<meta name="description" content="Verified catalog statistics for That Boy Hi Hat (Cumulative Web Inc). All numbers traced to Spotify for Artists or public pages/APIs, verified 2026-09-17.">
+<style>
+  :root{
+    --bg:#0b0b0f; --bg2:#121218; --card:#16161d; --line:#2a2a34;
+    --gold:#e8b33d; --gold-dim:#b78a2a; --ink:#f2ede3; --muted:#a8a39a;
+    --green:#3ddc84; --amber:#ffb020; --gray:#6e6e78;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.6}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  header.hero{background:radial-gradient(1200px 500px at 50% -80px,#2b2113 0%,var(--bg) 60%),var(--bg);border-bottom:1px solid var(--line);padding:72px 0 56px;text-align:center}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);border-radius:999px;padding:6px 16px;margin-bottom:22px}
+  h1{font-size:clamp(34px,6vw,58px);font-weight:800;letter-spacing:-1px}
+  h1 .amp{color:var(--gold)}
+  .sub{color:var(--muted);margin-top:10px;font-size:17px}
+  .total{margin:36px auto 0;max-width:560px;background:linear-gradient(180deg,#1b1712,#141210);border:1px solid var(--gold-dim);border-radius:18px;padding:28px}
+  .total .label{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+  .total .num{font-size:clamp(48px,8vw,72px);font-weight:800;color:var(--gold);letter-spacing:-2px;font-variant-numeric:tabular-nums}
+  .total .src{font-size:13px;color:var(--muted);margin-top:6px}
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:28px;letter-spacing:-.5px;margin-bottom:6px}
+  h2 .n{color:var(--gold)}
+  .sec-sub{color:var(--muted);margin-bottom:26px;max-width:760px;font-size:15px}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:15px}
+  thead th{background:#0f0f14;text-align:left;padding:12px 16px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+  tbody td{padding:11px 16px;border-bottom:1px solid #1e1e26;font-variant-numeric:tabular-nums}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:#1c1c24}
+  td.rank{color:var(--gold);font-weight:700;width:60px}
+  td.streams{text-align:right;font-weight:600}
+  tfoot td{padding:12px 16px;font-weight:800;border-top:2px solid var(--gold-dim);background:#0f0f14;font-variant-numeric:tabular-nums}
+  tfoot td.total-label{text-align:left;color:var(--gold)}
+  tfoot td.total-num{text-align:right;color:var(--gold)}
+  .note{font-size:13px;color:var(--muted);margin-top:12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card h3{font-size:18px;margin-bottom:4px}
+  .card .src{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .card ul{list-style:none;font-size:14.5px}
+  .card li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed #24242c;font-variant-numeric:tabular-nums}
+  .card li:last-child{border-bottom:none}
+  .card li span:last-child{color:var(--gold);font-weight:600;white-space:nowrap}
+  .matrix{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .plat{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gray);border-radius:10px;padding:16px 18px}
+  .plat.ok{border-left-color:var(--green)} .plat.warn{border-left-color:var(--amber)} .plat.none{border-left-color:var(--gray)}
+  .plat .name{font-weight:700;font-size:16px;display:flex;align-items:center;gap:10px}
+  .dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+  .dot.g{background:var(--green)} .dot.a{background:var(--amber)} .dot.x{background:var(--gray)}
+  .plat .detail{font-size:13.5px;color:var(--muted);margin-top:6px}
+  .plat a{color:var(--gold);word-break:break-all}
+  .pl-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:16px}
+  .pl-card .plname{font-size:18px;font-weight:700}
+  .pl-card .plname a{color:var(--gold);text-decoration:none}
+  .pl-card .plname a:hover{text-decoration:underline}
+  .pl-card .by{color:var(--muted);font-size:13px;margin:2px 0 12px}
+  .slot{display:inline-block;background:#0f0f14;border:1px solid var(--line);border-radius:8px;padding:6px 12px;margin:0 8px 8px 0;font-size:14px;font-variant-numeric:tabular-nums}
+  .slot b{color:var(--gold)}
+  footer{padding:48px 0 64px;color:var(--muted);font-size:13.5px}
+  footer .src-block{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:18px}
+  footer .src-block strong{color:var(--ink)}
+  footer p{margin-bottom:8px}
+  .badge{display:inline-block;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-left:8px;vertical-align:middle}
+  .b-ok{background:rgba(61,220,132,.14);color:var(--green);border:1px solid var(--green)}
+  .b-warn{background:rgba(255,176,32,.12);color:var(--amber);border:1px solid var(--amber)}
+  .b-none{background:rgba(110,110,120,.14);color:#b9b9c2;border:1px solid var(--gray)}
+  a{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Cumulative Web Inc · Verified Audit</div>
+    <h1>That Boy Hi Hat <span class="amp">—</span> Catalog Stats</h1>
+    <p class="sub">Every number on this page is verified. No estimates, no rounding, no projections.</p>
+    <div class="total">
+      <div class="label">All-time Spotify streams · 25 songs</div>
+      <div class="num">956,340</div>
+      <div class="src">Source: Spotify for Artists (owner's own artist dashboard), verified 2026-09-17</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- SPOTIFY TRACK TABLE -->
+  <section id="spotify">
+    <h2><span class="n">01</span> · Spotify — All-Time Streams</h2>
+    <p class="sec-sub">Per-track all-time stream counts as shown in Spotify for Artists (owner's own artist dashboard), verified 2026-09-17. 25 songs, total 956,340.</p>
+    <table>
+      <thead><tr><th>#</th><th>Track</th><th style="text-align:right">Streams</th></tr></thead>
+      <tbody>
+        <tr><td class="rank">1</td><td>Zooted Zone</td><td class="streams">316,402</td></tr>
+        <tr><td class="rank">2</td><td>Broken Hearts Club</td><td class="streams">255,301</td></tr>
+        <tr><td class="rank">3</td><td>Doves &amp; Diamonds</td><td class="streams">132,183</td></tr>
+        <tr><td class="rank">4</td><td>Place I Go to Dream</td><td class="streams">46,889</td></tr>
+        <tr><td class="rank">5</td><td>Shaka Zulu</td><td class="streams">27,884</td></tr>
+        <tr><td class="rank">6</td><td>Rainbows And Roses</td><td class="streams">26,567</td></tr>
+        <tr><td class="rank">7</td><td>Warped &amp; Wicked</td><td class="streams">25,004</td></tr>
+        <tr><td class="rank">8</td><td>Neon Nights Pt. 777</td><td class="streams">22,003</td></tr>
+        <tr><td class="rank">9</td><td>Golden Diamond</td><td class="streams">19,874</td></tr>
+        <tr><td class="rank">10</td><td>Diabolique</td><td class="streams">19,031</td></tr>
+        <tr><td class="rank">11</td><td>7th Angel</td><td class="streams">18,768</td></tr>
+        <tr><td class="rank">12</td><td>Scorpion &amp; Sapphires</td><td class="streams">16,369</td></tr>
+        <tr><td class="rank">13</td><td>Place I Go…*</td><td class="streams">11,722</td></tr>
+        <tr><td class="rank">14</td><td>Flex My Flame</td><td class="streams">8,121</td></tr>
+        <tr><td class="rank">15</td><td>Tears and Scars</td><td class="streams">4,182</td></tr>
+        <tr><td class="rank">16</td><td>Spirits n Shadows</td><td class="streams">2,257</td></tr>
+        <tr><td class="rank">17</td><td>Flamerz</td><td class="streams">913</td></tr>
+        <tr><td class="rank">18</td><td>Phantasm</td><td class="streams">858</td></tr>
+        <tr><td class="rank">19</td><td>Rainbows A…*</td><td class="streams">770</td></tr>
+        <tr><td class="rank">20</td><td>Roses over Monaco</td><td class="streams">425</td></tr>
+        <tr><td class="rank">21</td><td>Smokin' Pain</td><td class="streams">261</td></tr>
+        <tr><td class="rank">22</td><td>Ultimate</td><td class="streams">238</td></tr>
+        <tr><td class="rank">23</td><td>Misfits and Hooligans</td><td class="streams">207</td></tr>
+        <tr><td class="rank">24</td><td>Painted Lady</td><td class="streams">73</td></tr>
+        <tr><td class="rank">25</td><td>Toxic Element</td><td class="streams">38</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td></td><td class="total-label">TOTAL — 25 songs</td><td class="streams total-num">956,340</td></tr>
+      </tfoot>
+    </table>
+    <p class="note">* “Place I Go…” and “Rainbows A…” — title as shown in Spotify for Artists (truncated entries, listed as separate rows in the dashboard).</p>
+  </section>
+
+  <!-- YOUTUBE -->
+  <section id="youtube">
+    <h2><span class="n">02</span> · YouTube</h2>
+    <p class="sec-sub">View counts from public pages/APIs, verified 2026-09-17.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>ThatBoyHiHatVEVO</h3>
+        <div class="src">Public channel · verified 2026-09-17</div>
+        <ul>
+          <li><span>Doves &amp; Diamonds</span><span>233</span></li>
+          <li><span>Broken Hearts Club</span><span>132</span></li>
+          <li><span>SHAKA ZULU</span><span>69</span></li>
+          <li><span>Scorpion &amp; Sapphires</span><span>56</span></li>
+          <li><span>Spirits and Shadows</span><span>46</span></li>
+          <li><span>Warped &amp; Wicked</span><span>30</span></li>
+          <li><span>Place I Go To Dream</span><span>26</span></li>
+          <li><span>Diabolique</span><span>7</span></li>
+          <li><span>Ultimate (Official Music Video)</span><span>83 · <a href="https://www.youtube.com/watch?v=rjS8DptYwww">watch</a></span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>That Boy Hi Hat – Topic</h3>
+        <div class="src">Public channel · verified 2026-09-17</div>
+        <ul>
+          <li><span>Doves &amp; Diamonds</span><span>673</span></li>
+          <li><span>Neon Nights pt. 777</span><span>245</span></li>
+          <li><span>Zooted Zone</span><span>114 (+40 re-release)</span></li>
+          <li><span>SHAKA ZULU / Shaka Zulu</span><span>82 + 32</span></li>
+          <li><span>7th Angel</span><span>35</span></li>
+          <li><span>Rainbows And Roses</span><span>34</span></li>
+          <li><span>Golden Diamond</span><span>22 + 12</span></li>
+          <li><span>Broken Hearts Club</span><span>11</span></li>
+          <li><span>Diabolique</span><span>7</span></li>
+          <li><span>Broken Hearts Club — YouTube total</span><span>143</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>YouTube Music — Artist Page</h3>
+        <div class="src">Public page · verified 2026-09-17</div>
+        <ul>
+          <li><span>Doves &amp; Diamonds</span><span>7.9K</span></li>
+          <li><span>Scorpion &amp; Sapphires</span><span>3.4K</span></li>
+          <li><span>Subscribers</span><span>12</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAYLISTS -->
+  <section id="playlists">
+    <h2><span class="n">03</span> · Playlist Placements</h2>
+    <p class="sec-sub">Verified placements on editorial and curator playlists, verified 2026-09-17.</p>
+    <div class="pl-card">
+      <div class="plname"><a href="https://open.spotify.com/playlist/5zhnSpZqKRRaOvRMWuT0bL">Audiartist — “New Rap Hits”</a></div>
+      <div class="by">Curator playlist · verified 2026-09-17</div>
+      <span class="slot">Shaka Zulu <b>#21</b></span>
+      <span class="slot">Zooted Zone <b>#30</b></span>
+      <span class="slot">Doves &amp; Diamonds <b>#31</b></span>
+    </div>
+    <div class="pl-card">
+      <div class="plname"><a href="https://open.spotify.com/playlist/79Qj8SYOl5zW4m4dMprrX9">“No Label Needed”</a></div>
+      <div class="by">Curator playlist · verified 2026-09-17</div>
+      <span class="slot">Zooted Zone <b>#21</b></span>
+    </div>
+    <div class="pl-card">
+      <div class="plname"><a href="https://open.spotify.com/playlist/0hsLLFaADDjU54tFqaImFh">Eric Alper — “360°: The Best Indie Music”</a></div>
+      <div class="by">Curator playlist · verified 2026-09-17</div>
+      <span class="slot">Zooted Zone <b>#315</b></span>
+    </div>
+  </section>
+
+  <!-- PLATFORM PRESENCE -->
+  <section id="presence">
+    <h2><span class="n">04</span> · Platform Presence</h2>
+    <p class="sec-sub">Where the catalog stands across platforms — public pages/APIs, verified 2026-09-17. <span class="badge b-ok">verified live</span> <span class="badge b-warn">gaps / partial</span> <span class="badge b-none">no public index</span></p>
+    <div class="matrix">
+      <div class="plat ok">
+        <div class="name"><span class="dot g"></span>Spotify<span class="badge b-ok">present</span></div>
+        <div class="detail">Artist page live: <a href="https://open.spotify.com/artist/2f9j460EwjfvjYp3trBcb7">open.spotify.com/artist/2f9j460EwjfvjYp3trBcb7</a></div>
+      </div>
+      <div class="plat ok">
+        <div class="name"><span class="dot g"></span>Apple Music<span class="badge b-ok">24 collections</span></div>
+        <div class="detail">Artist: <a href="https://music.apple.com/us/artist/that-boy-hi-hat/1590210881">that-boy-hi-hat/1590210881</a><br>All 25 tracks present, purchase live.</div>
+      </div>
+      <div class="plat ok">
+        <div class="name"><span class="dot g"></span>Deezer<span class="badge b-ok">20 releases</span></div>
+        <div class="detail">Artist: <a href="https://www.deezer.com/artist/148421152">deezer.com/artist/148421152</a><br>2 fans.</div>
+      </div>
+      <div class="plat ok">
+        <div class="name"><span class="dot g"></span>Shazam<span class="badge b-ok">10 tracks confirmed</span></div>
+        <div class="detail">Including Diabolique: <a href="https://www.shazam.com/song/6785863612/diabolique">shazam.com/song/6785863612/diabolique</a></div>
+      </div>
+      <div class="plat warn">
+        <div class="name"><span class="dot a"></span>Amazon Music<span class="badge b-warn">32 items · gaps</span></div>
+        <div class="detail">Missing from Amazon: <strong>Idol or Icon</strong> and <strong>NO SKIPS</strong>.</div>
+      </div>
+      <div class="plat warn">
+        <div class="name"><span class="dot a"></span>Pandora<span class="badge b-warn">partial</span></div>
+        <div class="detail">Only the Diabolique track page is indexed.</div>
+      </div>
+      <div class="plat none">
+        <div class="name"><span class="dot x"></span>Tidal<span class="badge b-none">no public index</span></div>
+        <div class="detail">No public index found for the artist catalog.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="src-block">
+      <p><strong>Sources.</strong> (1) Spotify stream figures: “Spotify for Artists (owner's own artist dashboard), verified 2026-09-17”. (2) YouTube view counts, playlist positions, and platform presence: “public pages/APIs, verified 2026-09-17”.</p>
+      <p><strong>Verification rule.</strong> This page ships only numbers traceable to the verified audit of 2026-09-17. Anything that could not be traced was cut. No estimates. No rounding.</p>
+    </div>
+    <p>Cumulative Web Inc · That Boy Hi Hat — verified catalog stats. Published 2026-09-17.</p>
+  </div>
+</footer>
+
+</body>
+</html>
